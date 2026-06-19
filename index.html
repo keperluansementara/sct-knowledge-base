@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCT Knowledge Base by SHP</title>
+
+<style>
+body{
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    margin:0;
+    background:#f5f7fa;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+header{
+    background:#0F1B3F;
+    color:white;
+    padding:40px;
+}
+
+header h1{
+    margin:0;
+    font-size:36px;
+}
+
+header p{
+    opacity:.85;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.section{
+    background:white;
+    margin-bottom:24px;
+    padding:24px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+h2{
+    color:#0F1B3F;
+    border-bottom:2px solid #E5E7EB;
+    padding-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#0F1B3F;
+    color:white;
+    text-align:left;
+    padding:10px;
+}
+
+td{
+    border:1px solid #E5E7EB;
+    padding:10px;
+}
+
+tr:nth-child(even){
+    background:#F9FAFB;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    background:#DBEAFE;
+    color:#1D4ED8;
+    border-radius:999px;
+    margin:4px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    color:#6B7280;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Sales Control Tower Knowledge Base</h1>
+    <p>Official Knowledge Repository for SCT by SHP</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>Overview</h2>
+
+<p>
+This knowledge base serves as the primary source of truth for:
+</p>
+
+<span class="badge">KPI Definitions</span>
+<span class="badge">Business Rules</span>
+<span class="badge">Data Mapping</span>
+<span class="badge">SCT Architecture</span>
+<span class="badge">Business Review Framework</span>
+
+</div>
+
+<div class="section">
+<h2>KPI Dictionary</h2>
+
+<table>
+<tr>
+<th>KPI</th>
+<th>Definition</th>
+<th>Formula / Logic</th>
+<th>Category</th>
+</tr>
+
+<tr>
+<td>Sales</td>
+<td>Total Sales Value</td>
+<td>Sum(Sales)</td>
+<td>Sales</td>
+</tr>
+
+<tr>
+<td>BP</td>
+<td>Business Plan</td>
+<td>Actual / BP</td>
+<td>Planning</td>
+</tr>
+
+<tr>
+<td>RF</td>
+<td>Rolling Forecast</td>
+<td>Actual / RF</td>
+<td>Planning</td>
+</tr>
+
+<tr>
+<td>CA</td>
+<td>Customer Active</td>
+<td>Distinct Active Customer</td>
+<td>Distribution</td>
+</tr>
+
+<tr>
+<td>OFR</td>
+<td>Order Fulfillment Rate</td>
+<td>Fulfilled Orders / Total Orders</td>
+<td>Service Level</td>
+</tr>
+
+<tr>
+<td>NOD</td>
+<td>Number of Drop</td>
+<td>Total Delivered Outlets</td>
+<td>Coverage</td>
+</tr>
+
+<tr>
+<td>ECO</td>
+<td>Effective Call Outlet</td>
+<td>Productive Calls / Total Calls</td>
+<td>Coverage</td>
+</tr>
+
+<tr>
+<td>AR Collection</td>
+<td>Collection Achievement</td>
+<td>Actual Collection / Target Collection</td>
+<td>Finance</td>
+</tr>
+
+<tr>
+<td>Numeric Distribution</td>
+<td>Outlet Selling Product</td>
+<td>Selling Outlet / Total Outlet</td>
+<td>Distribution</td>
+</tr>
+
+<tr>
+<td>Sales per Outlet</td>
+<td>Outlet Productivity</td>
+<td>Sales / CA</td>
+<td>Productivity</td>
+</tr>
+
+<tr>
+<td>Basket Size</td>
+<td>Average Order Value</td>
+<td>Sales / Orders</td>
+<td>Productivity</td>
+</tr>
+
+<tr>
+<td>Frequency</td>
+<td>Order Frequency</td>
+<td>Orders / Outlet</td>
+<td>Productivity</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>SCT Business Rules</h2>
+
+<table>
+
+<tr>
+<th>Rule ID</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>BR001</td>
+<td>Customer Active (CA) must be sourced from CA_Master sheet.</td>
+</tr>
+
+<tr>
+<td>BR002</td>
+<td>Sales Target must use Performance sheet.</td>
+</tr>
+
+<tr>
+<td>BR003</td>
+<td>ITG sheets must not contribute additional target values.</td>
+</tr>
+
+<tr>
+<td>BR004</td>
+<td>ITG Arjuna belongs to Building Block 2 (BB2).</td>
+</tr>
+
+<tr>
+<td>BR005</td>
+<td>ITG Bima belongs to Building Block 3 (BB3).</td>
+</tr>
+
+<tr>
+<td>BR006</td>
+<td>ITG Supercup belongs to Building Block 4 (BB4).</td>
+</tr>
+
+<tr>
+<td>BR007</td>
+<td>Avoid target double counting across sheets.</td>
+</tr>
+
+<tr>
+<td>BR008</td>
+<td>Performance sheet is the primary source for overall Wholesaler KPI.</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>MonitorDaily Data Mapping</h2>
+
+<table>
+
+<tr>
+<th>Sheet</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Performance</td>
+<td>Main Sales KPI Source</td>
+</tr>
+
+<tr>
+<td>CA_Master</td>
+<td>Customer Active Source</td>
+</tr>
+
+<tr>
+<td>ITG Arjuna</td>
+<td>Building Block 2 Program</td>
+</tr>
+
+<tr>
+<td>ITG Bima</td>
+<td>Building Block 3 Program</td>
+</tr>
+
+<tr>
+<td>ITG Supercup</td>
+<td>Building Block 4 Program</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>SCT Architecture</h2>
+
+<h3>Current Architecture</h3>
+
+<ul>
+<li>Parser Engine</li>
+<li>KPI Engine</li>
+<li>Render Engine</li>
+<li>Export Engine</li>
+<li>Infographic Engine</li>
+</ul>
+
+<h3>Target Architecture</h3>
+
+<ul>
+<li>Data Quality Engine</li>
+<li>Master Data Engine</li>
+<li>Insight Engine</li>
+<li>Alert Engine</li>
+<li>Forecast Engine</li>
+<li>Simulation Engine</li>
+<li>PDCA Engine</li>
+<li>Collaboration Layer</li>
+<li>API Integration Layer</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>Business Review Framework</h2>
+
+<ol>
+<li>Sales Achievement</li>
+<li>Sales Growth vs LY</li>
+<li>Customer Active (CA)</li>
+<li>Region Contribution</li>
+<li>Channel Contribution</li>
+<li>SKU Contribution</li>
+<li>Forecast Accuracy</li>
+<li>Risks & Opportunities</li>
+<li>Recommended Actions</li>
+<li>Executive Summary</li>
+</ol>
+
+</div>
+
+<div class="section">
+
+<h2>FMCG Analysis Principles</h2>
+
+<ul>
+<li>Never assume KPI definitions.</li>
+<li>Always separate facts, assumptions, and hypotheses.</li>
+<li>Investigate Sales before RCA.</li>
+<li>Investigate CA before Distribution conclusions.</li>
+<li>Investigate Region, Channel, and SKU contribution before recommendations.</li>
+<li>Do not conclude stockout or service issues without supporting evidence.</li>
+<li>Prioritize evidence-based recommendations.</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer">
+Sales Control Tower Knowledge Base by SHP © 2026
+</div>
+
+</body>
+</html>
